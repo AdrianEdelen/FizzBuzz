@@ -1,16 +1,44 @@
 ﻿document.getElementById("fizzBuzz").addEventListener("click", () => {
-    let fizzInp1 = document.getElementById("fizzInp1").value;
-    let fizzInp2 = document.getElementById("fizzInp2").value;
-    for (i = 1; i <= 100; i++) {
-        if (i % fizzInp1 === 0) {
-            document.getElementById("fizzPrint").innerHTML += `<br /> ${i} fizz`;
+    document.getElementById("result").innerHTML = '';
+    let userInpFizz = parseInt(document.getElementById("userInpFizz").value);
+    let userInpBuzz = parseInt(document.getElementById("userInpBuzz").value);
+    let result = "";
+    if (isNaN(userInpFizz) || isNaN(userInpBuzz)) {
+        document.getElementById("result").innerHTML = "You gotta put something there, bud!";
+        return;
+    } else {
+        for (let i = 1; i <= 100; i++) {
+            // determining whether or not we should place a fizz, buzz, or nothing after the number
+            if ( i % userInpFizz === 0 && i % userInpBuzz === 0) {
+                result = `${i} fizz buzz `;
+            }else if (i % userInpFizz === 0) {
+                result = `${i} fizz `;
+            }else if (i % userInpBuzz === 0) {
+                result = `${i} buzz `;
+            }else {
+                result = `${i} `;
+            }
+            //
+            //This is supposed to call the typer function and print each number of result var individually
+            //
+            typer(result,i);
+            //line break before starting the next loop
+            
+            
         }
-        else if (i % fizzInp2) {
-            document.getElementById("fizzPrint").innerHTML += `<br /> ${i} buzz`;
+       
+        console.log(result.length);
+        
+        function typer(result,i) {
+            
+            setTimeout(function () {
+                for (let i = 0; i < result.length; i++) {
+                    document.getElementById("result").innerHTML += result[i];
+                }
+            }, 20 * i);
+            document.getElementById("result").innerHTML += `<br />`;
         }
-        else {
-            document.getElementById("fizzPrint").innerHTML += `<br /> ${i}`;
-        }
-    }
+        
 
+    }
 })
