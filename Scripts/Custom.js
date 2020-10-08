@@ -31,7 +31,7 @@
 })
 
 
-document.querySelectorALL(".numbersOnly").forEach(a => {
+document.querySelectorAll(".numbersOnly").forEach(a => {
 	a.addEventListener("keydown", (evt) => {
 		let keyChar = (evt.which) ? evt.which : evt.keyCode
 
