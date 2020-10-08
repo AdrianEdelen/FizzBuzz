@@ -29,8 +29,7 @@
 		}
 	}
 })
-
-
+// validating user input, preventing anything but numbers from being typed into the boxes
 document.querySelectorAll(".numbersOnly").forEach(a => {
 	a.addEventListener("keydown", (evt) => {
 		let keyChar = (evt.which) ? evt.which : evt.keyCode
@@ -44,8 +43,6 @@ document.querySelectorAll(".numbersOnly").forEach(a => {
 		} else {
 			evt.preventDefault();
 			return false;
-
 		}
 	})
-
 })
