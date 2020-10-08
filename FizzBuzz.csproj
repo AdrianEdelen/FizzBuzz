@@ -69,7 +69,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Code.html" />
     <Content Include="Content\prism.css" />
     <Content Include="Content\Style.css" />
     <Content Include="img\apple-touch-icon.png" />
@@ -77,7 +76,6 @@
     <Content Include="Index.html" />
     <Content Include="Scripts\Custom.js" />
     <Content Include="Scripts\prism.js" />
-    <Content Include="Solve.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
